@@ -3,14 +3,12 @@
 
 <p>Go <a href="/">back</a>.</p>
 
-<%= @parsed_data %>
-
 <ul>
-  <%#@array_of_symbols.each do | a_symbols | %>
+  <%@array_of_symbols.each do | a_symbols | %>
     <li>
-      <a href="/forex/AED">
-        Convert 1 AED to...
+      <a href="/forex/<%= a_symbols %>">
+        Convert 1 <%= a_symbols %> to...
       </a>
     </li>
-  <%#end %>
+  <% end %>
 </ul>
