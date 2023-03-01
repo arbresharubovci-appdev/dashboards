@@ -1,4 +1,8 @@
 class CurrenciesController < ApplicationController
+  def dashboards
+    render({:template => "currency_template/resources_usa.html.erb"})
+  end
+  
   def first_currency
     @raw_date = open("https://api.exchangerate.host/symbols").read
     @parsed_data = JSON.parse(@raw_date)
