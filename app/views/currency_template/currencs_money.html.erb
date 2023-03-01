@@ -1,13 +1,7 @@
-<h1></h1>
+<h1>Convert <%= @from_currency %> to <%= @next_currencie %></h1>
 
-<h1>
-  <%= @from_currency %>d<%= @next_currencie %>
-</h1>
 
-<ul>
-  <%  @array_of_money.each do |a_money| %>
-    <li>
-      <%= a_money %>
-    </li>
-  <% end %>
-</ul>
+<p>1 <%=@from_currency%> equals <%=@results.inspect%> <%= @next_currencie %>
+
+
+<p>Go <a href="/forex/<%=@from_currency%>">back</a>.</p>

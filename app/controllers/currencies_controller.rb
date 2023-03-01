@@ -30,21 +30,19 @@ def symbols_currency
 end
 
 def money
-  #Parameters: {"from_currency"=>"AED", "next_currencie"=>"AED"}
   
   @from_currency = params.fetch("from_currency")
   @next_currencie = params.fetch("next_currencie")
 
-  @array_of_money = Array.new
+  @currencs_raw = open("https://api.exchangerate.host/convert?from=#{@from_currency}&to=#{@next_currencie}").read
+  @parsed_data = JSON.parse(@currencs_raw)
+  @results = @parsed_data.fetch("info").fetch("rate")
 
-  @from_currency.to_i.times do    
-      @array_of_money.push(rand(@next_currencie.to_i) + 1)
-    end
+  # @array_of_money = Array.new
 
+  # @from_currency.to_i.times do    
+  #     @array_of_money.push(rand(@next_currencie.to_i) + 1)
 
   render({:template => "currency_template/currencs_money.html.erb"}) 
 end
-
-
-
 end
