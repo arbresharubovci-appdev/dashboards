@@ -20,4 +20,9 @@ class CurrenciesController < ApplicationController
     render({:template => "currency_template/step_two.html.erb"})
   end
 
+def symbols_currency
+  
+  render({:template => "currency_template/symbols_currency.html.erb"})  
+end
+
 end
