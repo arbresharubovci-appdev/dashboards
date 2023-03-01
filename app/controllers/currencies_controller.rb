@@ -35,6 +35,13 @@ def money
   @from_currency = params.fetch("from_currency")
   @next_currencie = params.fetch("next_currencie")
 
+  @array_of_money = Array.new
+
+  @from_currency.to_i.times do    
+      @array_of_money.push(rand(@next_currencie.to_i) + 1)
+    end
+
+
   render({:template => "currency_template/currencs_money.html.erb"}) 
 end
 

@@ -1,1 +1,13 @@
 <h1></h1>
+
+<h1>
+  <%= @from_currency %>d<%= @next_currencie %>
+</h1>
+
+<ul>
+  <%  @array_of_money.each do |a_money| %>
+    <li>
+      <%= a_money %>
+    </li>
+  <% end %>
+</ul>
