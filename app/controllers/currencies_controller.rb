@@ -29,4 +29,15 @@ def symbols_currency
   render({:template => "currency_template/symbols_currency.html.erb"})  
 end
 
+def money
+  #Parameters: {"from_currency"=>"AED", "next_currencie"=>"AED"}
+  
+  @from_currency = params.fetch("from_currency")
+  @next_currencie = params.fetch("next_currencie")
+
+  render({:template => "currency_template/currencs_money.html.erb"}) 
+end
+
+
+
 end
